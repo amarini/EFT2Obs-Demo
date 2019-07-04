@@ -4,7 +4,8 @@ set -e
 
 ### SET ENVIRONMENT VARIABLES HERE
 MG_DIR="MG5_aMC_v2_6_5"
-PROCESS="ggF"
+PROCESS="ggF_SMEFT"
+#PROCESS="ggF"
 RUNLABEL="pilotrun"
 ###
 
@@ -22,7 +23,7 @@ pushd ${MG_DIR}/${PROCESS}
 } > mgrunscript
 
 if [ -d "${MG_DIR}/${PROCESS}/Events/${RUNLABEL}" ]; then rm -r ${MG_DIR}/${PROCESS}/Events/${RUNLABEL}; fi
-./bin/generate_events pilotrun < mgrunscript
+./bin/generate_events pilotrun < mgrunscript 
 popd
 
 rivet --analysis=HiggsTemplateCrossSections "${TMPDIR}/fifo.hepmc" -o Rivet.yoda

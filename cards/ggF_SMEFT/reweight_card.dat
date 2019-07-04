@@ -1,0 +1,41 @@
+change rwgt_dir rwgt
+change mode LO
+launch --rwgt_name=SM
+   set cHW 0.0
+   set cHG 0.0
+launch --rwgt_name= cHW_down
+   set cHW -0.0001
+   set cHG 0.0
+launch --rwgt_name= cHW_up
+   set cHW 0.0001
+   set cHG 0.0
+launch --rwgt_name= cHG_down
+   set cHG -0.0001
+   set cHW 0.0
+launch --rwgt_name= cHG_up
+   set cHG 0.0001
+   set cHW 0.0
+launch --rwgt_name= cHW_down_cHG_down
+   set cHW -0.0001
+   set cHW -0.0001
+launch --rwgt_name= cHW_down_cHG_up
+   set cHW -0.0001
+   set cHW 0.0001
+launch --rwgt_name= cHW_up_cHG_down
+   set cHW 0.0001
+   set cHW -0.0001
+launch --rwgt_name= cHW_up_cHG_up
+   set cHW 0.0001
+   set cHW 0.0001
+launch --rwgt_name= cHG_down_cHW_down
+   set cHG -0.0001
+   set cHG -0.0001
+launch --rwgt_name= cHG_down_cHW_up
+   set cHG -0.0001
+   set cHG 0.0001
+launch --rwgt_name= cHG_up_cHW_down
+   set cHG 0.0001
+   set cHG -0.0001
+launch --rwgt_name= cHG_up_cHW_up
+   set cHG 0.0001
+   set cHG 0.0001

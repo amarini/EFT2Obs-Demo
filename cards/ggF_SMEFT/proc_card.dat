@@ -1,0 +1,11 @@
+import model SMEFTsim_A_general_MwScheme_UFO_v2
+
+generate g g > H NP<=1
+add process g g > H j NP<=1
+#add process g g > H j j, H > a a NP<=1
+#add process g g > H j j j, H > a a NP<=1
+#add process g g > H j, H > mu+ mu-
+#add process g g > H j j, H > mu+ mu-
+
+output ggF_SMEFT  -nojpeg
+
