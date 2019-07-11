@@ -5,14 +5,15 @@ params={}
 
 #default, down, up
 #params['cH'] =(0.,-1.E-4,1.E-4)
-#params['cG'] =(0.,-1.E-4,1.E-4)
-params['cHG'] =(0.,-1.E-4,1.E-4)
-params['cHW'] =(0.,-1.E-4,1.E-4)
+params['cG'] =(0.,-1.E-2,1.E-2)
+params['cGtil'] =(0.,-1.E-2,1.E-2)
+#params['cHG'] =(0.,-1.E-4,1.E-4)
+#params['cHW'] =(0.,-1.E-4,1.E-4)
 
 ################## END CONFIGURATION #######
 vname = ('SM','down','up')
 
-fout =open("ggH_EFT_reweight_card.dat","w")
+fout =open("reweight_card.dat","w")
 
 print >> fout, "change rwgt_dir rwgt"
 print >> fout, "change mode LO"

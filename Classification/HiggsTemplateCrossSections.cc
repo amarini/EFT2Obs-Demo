@@ -9,6 +9,7 @@
 // Definition of the StatusCode and Category enums
 #include "HiggsTemplateCrossSections.h"
 #include<vector>
+#define MAX_WEIGHTS 100
 
 namespace Rivet {
   
@@ -569,7 +570,8 @@ namespace Rivet {
 
       // Fill histograms: variables used in the categorization
       hist_pT_Higgs->fill(cat.higgs.pT(),weight);
-      for (unsigned i = 0; i < 5; ++i) {
+      for (unsigned i = 0; i < event.genEvent()->weights().size(); ++i) {
+        if (i >=MAX_WEIGHTS) std::cout<<"BOOKED MAX_WEIGHTS="<<MAX_WEIGHTS<<" while weights are "<<event.genEvent()->weights().size()<<std::endl;
         hist_pT_Higgs_vec[i]->fill(cat.higgs.pT(), event.genEvent()->weights()[i]);
       }
       hist_y_Higgs->fill(cat.higgs.rapidity(),weight);
@@ -638,8 +640,8 @@ namespace Rivet {
       hist_Njets25     = bookHisto1D("Njets25",10,0,10);
       hist_Njets30     = bookHisto1D("Njets30",10,0,10);
 
-      hist_pT_Higgs_vec.resize(5);
-      for (unsigned i = 0; i < 5; ++i) {
+      hist_pT_Higgs_vec.resize(MAX_WEIGHTS);
+      for (unsigned i = 0; i < MAX_WEIGHTS; ++i) {
         hist_pT_Higgs_vec[i] = bookHisto1D("pT_Higgs_"+std::to_string(i) ,20,0,200);
       }
     }

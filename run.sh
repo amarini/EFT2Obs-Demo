@@ -9,10 +9,13 @@ PROCESS="ggF_SMEFT"
 RUNLABEL="pilotrun"
 ###
 
+export PYTHIA8DATA=$PWD/${MG_DIR}/HEPTools/pythia8/share/Pythia8/xmldoc
+
 cp cards/${PROCESS}/{param,reweight,run,pythia8}_card.dat ${MG_DIR}/${PROCESS}/Cards/
 
 # Need to harcode the path to the FIFO, madgraph won't expand environment variables
 sed -i "s@XTMPDIRX@${TMPDIR}@g" ${MG_DIR}/${PROCESS}/Cards/pythia8_card.dat
+
 
 pushd ${MG_DIR}/${PROCESS}
 # Create MG config
