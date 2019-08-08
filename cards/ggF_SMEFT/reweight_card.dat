@@ -1,41 +1,14 @@
 change rwgt_dir rwgt
 change mode LO
 launch --rwgt_name=SM
-   set cGtil 0.0
-   set cG 0.0
-launch --rwgt_name= cGtil_down
-   set cGtil -0.01
-   set cG 0.0
-launch --rwgt_name= cGtil_up
-   set cGtil 0.01
-   set cG 0.0
-launch --rwgt_name= cG_down
-   set cG -0.01
-   set cGtil 0.0
-launch --rwgt_name= cG_up
-   set cG 0.01
-   set cGtil 0.0
-launch --rwgt_name= cGtil_down_cG_down
-   set cGtil -0.01
-   set cGtil -0.01
-launch --rwgt_name= cGtil_down_cG_up
-   set cGtil -0.01
-   set cGtil 0.01
-launch --rwgt_name= cGtil_up_cG_down
-   set cGtil 0.01
-   set cGtil -0.01
-launch --rwgt_name= cGtil_up_cG_up
-   set cGtil 0.01
-   set cGtil 0.01
-launch --rwgt_name= cG_down_cGtil_down
-   set cG -0.01
-   set cG -0.01
-launch --rwgt_name= cG_down_cGtil_up
-   set cG -0.01
-   set cG 0.01
-launch --rwgt_name= cG_up_cGtil_down
-   set cG 0.01
-   set cG -0.01
-launch --rwgt_name= cG_up_cGtil_up
-   set cG 0.01
-   set cG 0.01
+   set cHG 0.
+   set cHW 0.
+   set cG 0.
+launch --rwgt_name= cHG_down
+   set cHG -1
+   set cHW 0.
+   set cG 0.
+launch --rwgt_name= cHG_up
+   set cHG 1
+   set cHW 0.
+   set cG 0.

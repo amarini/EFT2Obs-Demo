@@ -1,4 +1,4 @@
-set param_card cHW 0.
-set param_card cH 0.
-set param_card cG 0.
+set param_card cHW 0.1
+set param_card cH 0.1
+set param_card cG 0.1
 set param_card MH 125

@@ -5,9 +5,9 @@ params={}
 
 #default, down, up
 #params['cH'] =(0.,-1.E-4,1.E-4)
-params['cG'] =(0.,-1.E-2,1.E-2)
-params['cGtil'] =(0.,-1.E-2,1.E-2)
-#params['cHG'] =(0.,-1.E-4,1.E-4)
+#params['cG'] =(0.,-1,1)
+#params['cGtil'] =(0.,-1,1)
+params['cHG'] =(0,-1,1)
 #params['cHW'] =(0.,-1.E-4,1.E-4)
 
 ################## END CONFIGURATION #######
