@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
+source env.sh
+
 set -x
 set -e
 
+if [[ $# -lt 1 ]]; then
+    echo "Insufficient number of arguments, usage is ./setup_process.sh [name]]"
+    exit 1
+fi
+
+PROCESS=$1
+
 ### SET ENVIRONMENT VARIABLES HERE
-MG_DIR="MG5_aMC_v2_6_5"
-PROCESS="ggF_SMEFT"
-#PROCESS="ggF"
 RUNLABEL="pilotrun"
 ###
 
@@ -29,5 +35,10 @@ if [ -d "${MG_DIR}/${PROCESS}/Events/${RUNLABEL}" ]; then rm -r ${MG_DIR}/${PROC
 ./bin/generate_events pilotrun < mgrunscript 
 popd
 
+<<<<<<< HEAD
 rivet --analysis=HiggsTemplateCrossSections "${TMPDIR}/fifo.hepmc" -o Rivet.yoda
 yoda2root Rivet.yoda
+=======
+rivet --analysis=HiggsTemplateCrossSectionsStage1 "${TMPDIR}/fifo.hepmc" -o Rivet.yoda
+# yoda2root Rivet.yoda
+>>>>>>> andrew/master
