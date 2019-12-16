@@ -8,7 +8,7 @@ if [ -z "${MG_DIR}" ]; then echo "ERROR: environment variable MG_DIR is not set"
 
 ## todo, use feynrules site and not the copy. Add a possible loop
 pushd ${MG_DIR}/models
-wget --no-check-certificate https://amarini.web.cern.ch/amarini/SMEFTsim_A_general_MwScheme_UFO_v2.tar.gz
-tar -zxf SMEFTsim_A_general_MwScheme_UFO_v2.tar.gz
-rm SMEFTsim_A_general_MwScheme_UFO_v2.tar.gz
+wget --no-check-certificate https://feynrules.irmp.ucl.ac.be/raw-attachment/wiki/SMEFT/SMEFTsim_A_U35_MwScheme_UFO_v2.1.tar.gz
+tar -zxf SMEFTsim_A_U35_MwScheme_UFO_v2.1.tar.gz
+rm SMEFTsim_A_U35_MwScheme_UFO_v2.1.tar.gz
 popd
