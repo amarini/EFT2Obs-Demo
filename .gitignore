@@ -13,11 +13,9 @@
 AutoDict_*
 
 # Other temp files
-*.txt
 *.log
 *.png
 *.pdf
-*.dat
 *.tmp
 *.o
 *.so

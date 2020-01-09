@@ -1,0 +1,9 @@
+import model SMEFTsim_A_U35_MwScheme_UFO_v2_1-SMlimit
+
+generate g g > h  NP=2
+add process g g > H j  NP=2
+add process g g > H j j NP=2
+add process g g > H j j j NP=2
+
+output ggF_SMEFT_U35 -nojpeg
+
