@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 source env.sh
 
-set -x
-set -e
+#set -x
+#set -e
 
 if [[ $# -lt 1 ]]; then
     echo "Insufficient number of arguments, usage is ./setup_process.sh [name]]"
@@ -13,6 +13,7 @@ PROCESS=$1
 
 ### SET ENVIRONMENT VARIABLES HERE
 RUNLABEL="pilotrun"
+TMPDIR="/tmp/spigazzi"
 ###
 
 export PYTHIA8DATA=$PWD/${MG_DIR}/HEPTools/pythia8/share/Pythia8/xmldoc
@@ -31,14 +32,11 @@ pushd ${MG_DIR}/${PROCESS}
   echo "done"
 } > mgrunscript
 
+mkdir -p $TMPDIR
+
 if [ -d "${MG_DIR}/${PROCESS}/Events/${RUNLABEL}" ]; then rm -r ${MG_DIR}/${PROCESS}/Events/${RUNLABEL}; fi
 ./bin/generate_events pilotrun < mgrunscript 
 popd
 
-<<<<<<< HEAD
-rivet --analysis=HiggsTemplateCrossSections "${TMPDIR}/fifo.hepmc" -o Rivet.yoda
-yoda2root Rivet.yoda
-=======
-rivet --analysis=HiggsTemplateCrossSectionsStage1 "${TMPDIR}/fifo.hepmc" -o Rivet.yoda
-# yoda2root Rivet.yoda
->>>>>>> andrew/master
+#rivet --analysis=Higgs2GGFiducialAndDifferential "${TMPDIR}/fifo.hepmc" -o rivet_${PROCESS}_output.yoda
+rivet --analysis=HiggsTemplateCrossSectionsStage1 "${TMPDIR}/fifo.hepmc" -o rivet_${PROCESS}_output.yoda

@@ -12,3 +12,11 @@ launch --rwgt_name= cHG_up
    set cHG 1
    set cHW 0.
    set cG 0.
+launch --rwgt_name= cG_down
+   set cHG 0.
+   set cHW 0.
+   set cG -1.
+launch --rwgt_name= cG_up
+   set cHG 0
+   set cHW 0.
+   set cG 1.
